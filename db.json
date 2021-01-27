@@ -32,11 +32,12 @@
     "theme": {
       "colors": {
         "primary": "#9c27b0",
-        "secondary": "#3d5afe",
+        "secondary": "#f50057",
         "mainBg": "#171B35",
         "contrastText": "#FFFFFF",
         "wrong": "#FF5722",
-        "success": "#4CAF50"
+        "success": "#4CAF50",
+        "gray": "#a0a0a0"
       },
       "borderRadius": "4px"
     }

@@ -1,28 +1,67 @@
 {
     "bg": "https://images3.alphacoders.com/109/1093130.jpg",
     "title": "Quiz Warrior Nun",
+    "gitLink" : "https://github.com/NayaraHolanda/Warrior-Nun-Quiz",
     "description": "Teste os seus conhecimentos sobre essa série que fez sucesso na Netflix",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
-        "description": "Essa é pra aquecer",
+        "image": "https://occ-0-444-1001.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQZ7iErQqGwo3tbC9-RAEW9AUDb9wlfJ7MUnJtoitgJRveuUrWEjZYV8vw13tAwOFKdcjVXte9wWhEvczr5YlB-hY9Wj-n-XLzWRldv68PUthJdO.jpg?r=9f6",
+        "title": "Qual problema que Ava tinha antes de morrer e ser ressuscitada?",
+        "description": "Essa é pra aquecer...",
         "answer": 2,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "Convulsão",
+          "Deslexia",
+          "Tetraplegia",
+          "Paraplegia"
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
+        "image": "https://upload.wikimedia.org/wikipedia/en/c/c4/Warrior_Nun_%28Title-screen%29.png",
+        "title": "Qual o nome do objeto que foi colocado nas costas de Ava?",
+        "description": "Será qual...",
+        "answer": 1,
+        "alternatives": [
+           "Arco de fogo",
+           "Halo",
+           "Arco",
+           "Helo"
+        ]
+      },
+      {
+        "image": "https://rollingstone.uol.com.br/media/_versions/warrior_nun_cortesia_netflix_widelg.jpg",
+        "title": "Qual das irmãs foi levada ao inferno?",
+        "description": "E voltou hein...",
         "answer": 0,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+           "Lilith",
+           "Mary",
+           "Beatrice",
+           "Camila"
+        ]
+      },
+      {
+        "image": "https://observatoriodocinema.uol.com.br/wp-content/uploads/2020/07/warrior-nun-end.jpg",
+        "title": "Quem estava dentro da caverna?",
+        "description": "Esse enganou todos...",
+        "answer": 0,
+        "alternatives": [
+           "Adriel",
+           "Lúcifer",
+           "Rafael",
+           "Gabriel"
+        ]
+      },
+      {
+        "image": "https://static3.srcdn.com/wordpress/wp-content/uploads/2020/07/Warrior-Nun-Sister-Shannon.jpg?q=50&fit=crop&w=740&h=369",
+        "title": "Quem era a guardiã anterior do Halo?",
+        "description": "Pena que foi dessa pra melhor...",
+        "answer": 3,
+        "alternatives": [
+           "Mary",
+           "Lilith",
+           "Beatrice",
+           "Shannon"
         ]
       }
     ],
@@ -37,7 +76,8 @@
         "contrastText": "#FFFFFF",
         "wrong": "#FF5722",
         "success": "#4CAF50",
-        "gray": "#a0a0a0"
+        "gray": "#a0a0a0",
+        "disabled": "#979797"
       },
       "borderRadius": "4px"
     }

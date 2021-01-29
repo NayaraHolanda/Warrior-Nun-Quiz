@@ -8,13 +8,14 @@ import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizContainer from '../src/components/QuizContainer';
 import QuizButton from '../src/components/QuizButton';
+import AlternativesForm from '../src/components/AlternativesForm';
 
 function ResultWidget({ results, totalQuestions }) {
   const correctCount = results.filter((x) => x).length;
   return (
     <Widget>
       <Widget.Header>
-        Tela de Resultado
+        TELA DE RESULTADO
       </Widget.Header>
 
       <Widget.Content>
@@ -25,10 +26,10 @@ function ResultWidget({ results, totalQuestions }) {
           {results.map((result, index) => (
             // eslint-disable-next-line react/no-array-index-key
             <li key={`result__${index}`}>
-              #
               {index + 1}
+              ª
               {' '}
-              Resultado:
+              Questão:
               {' '}
               {result === true ? 'Acertou' : 'Errou'}
             </li>
@@ -39,15 +40,23 @@ function ResultWidget({ results, totalQuestions }) {
   );
 }
 
-function LoadingWidget() {
+function LoadingWidget({ imgLoading }) {
   return (
     <Widget>
       <Widget.Header>
-        Carregando...
+        Prepare-se
       </Widget.Header>
 
       <Widget.Content>
-        [Desafio do Loading]
+        <img
+          alt="Carregando quiz"
+          style={{
+            width: '100%',
+            height: '150px',
+            objectFit: 'cover',
+          }}
+          src={imgLoading}
+        />
       </Widget.Content>
     </Widget>
   );
@@ -96,7 +105,7 @@ function QuestionWidget({
         <p>
           {question.description}
         </p>
-        <form
+        <AlternativesForm
           onSubmit={(infosDoEvento) => {
             infosDoEvento.preventDefault();
             setisQuestionSubmited(true);
@@ -110,11 +119,15 @@ function QuestionWidget({
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative__${alternativeIndex}`;
+            const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR';
+            const isSelected = selectedAlternative === alternativeIndex;
             return (
               <Widget.Topic
                 as="label"
-                htmlFor={alternativeId}
                 key={alternativeId}
+                htmlFor={alternativeId}
+                data-selected={isSelected}
+                data-status={isQuestionSubmited && alternativeStatus}
               >
                 <input
                   style={{ display: 'none' }}
@@ -136,9 +149,9 @@ function QuestionWidget({
           <QuizButton type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </QuizButton>
-          {isQuestionSubmited && isCorrect && <p>Você acertou! :D </p>}
-          {isQuestionSubmited && !isCorrect && <p>Você errou! :/ </p>}
-        </form>
+          {/* {isQuestionSubmited && isCorrect && <p>Você acertou! :D </p>}
+          {isQuestionSubmited && !isCorrect && <p>Você errou! :/ </p>} */}
+        </AlternativesForm>
       </Widget.Content>
     </Widget>
   );
@@ -174,6 +187,7 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
+  const imgLoading = db.gifLoading;
 
   function addResult(result) {
     setResults([
@@ -192,7 +206,7 @@ export default function QuizPage() {
     // fetch() ...
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1000);
+    }, 2.2 * 1000);
   // nasce === didMount
   }, []);
 
@@ -229,7 +243,7 @@ export default function QuizPage() {
           />
         )}
 
-        {screenState === screenStates.LOADING && <LoadingWidget />}
+        {screenState === screenStates.LOADING && <LoadingWidget imgLoading={imgLoading} />}
 
         {screenState === screenStates.RESULT && (
           <ResultWidget results={results} totalQuestions={totalQuestions} />

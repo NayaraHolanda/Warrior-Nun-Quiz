@@ -56,7 +56,12 @@ export default function Home() {
             {db.external.map(({ quizName, quizURL }) => (
               <p>
                 <a href={quizURL} target="_blank" rel="noreferrer">
-                  <QuizButton>
+                  <QuizButton
+                    style={{
+                      backgroundColor: '#c2185b',
+                      textTransform: 'initial',
+                    }}
+                  >
                     {quizName}
                   </QuizButton>
                 </a>

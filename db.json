@@ -1,5 +1,6 @@
 {
     "bg": "https://images3.alphacoders.com/109/1093130.jpg",
+    "gifLoading": "https://i.imgur.com/9EzGcpc.gif",
     "title": "Quiz Warrior Nun",
     "gitLink" : "https://github.com/NayaraHolanda/Warrior-Nun-Quiz",
     "description": "Teste os seus conhecimentos sobre essa série que fez sucesso na Netflix",
@@ -67,8 +68,16 @@
     ],
     "external": [
       {
-        "quizName": "Demon Slayer",
+        "quizName": "Quiz Demon Slayer",
         "quizURL":"https://demon-slayer-quiz.hugos94.vercel.app/"
+      },
+      {
+        "quizName": "Quiz DevSoutinho",
+        "quizURL":"https://aluraquiz-devsoutinho.omariosouto.vercel.app/"
+      },
+      {
+        "quizName": "Quiz Valorant",
+        "quizURL":"https://quiz-valorant.johnatanivini.vercel.app/"
       }
     ],
     "theme": {
@@ -80,7 +89,8 @@
         "wrong": "#FF5722",
         "success": "#4CAF50",
         "gray": "#a0a0a0",
-        "disabled": "#979797"
+        "disabled": "#979797",
+        "botaoQuizGalera": "#880e4f"
       },
       "borderRadius": "4px"
     }
